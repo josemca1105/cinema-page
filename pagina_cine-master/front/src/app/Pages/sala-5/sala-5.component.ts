@@ -12,15 +12,15 @@ interface SeatRow {
 }
 
 @Component({
-  selector: 'app-sala-1',
+  selector: 'app-sala-5',
   standalone: true,
   imports: [NgFor, NgClass, NgIf],
-  templateUrl: './sala-1.component.html',
-  styleUrl: './sala-1.component.css'
+  templateUrl: './sala-5.component.html',
+  styleUrl: './sala-5.component.css'
 })
-export class Sala1Component {
+export class Sala5Component {
 
-  selectedMovieIndex = 0;
+  selectedMovieIndex = 4;
   selectedSeats: { row: string; seat: Seat }[] = [];;
 
   movies = [
@@ -108,4 +108,4 @@ export class Sala1Component {
   getTotalCost() {
     return this.selectedSeats.length * Number(this.movies[this.selectedMovieIndex].ticketRate);
   }
-}
+}5

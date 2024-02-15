@@ -12,15 +12,15 @@ interface SeatRow {
 }
 
 @Component({
-  selector: 'app-sala-1',
+  selector: 'app-sala-3',
   standalone: true,
   imports: [NgFor, NgClass, NgIf],
-  templateUrl: './sala-1.component.html',
-  styleUrl: './sala-1.component.css'
+  templateUrl: './sala-3.component.html',
+  styleUrl: './sala-3.component.css'
 })
-export class Sala1Component {
+export class Sala3Component {
 
-  selectedMovieIndex = 0;
+  selectedMovieIndex = 2;
   selectedSeats: { row: string; seat: Seat }[] = [];;
 
   movies = [

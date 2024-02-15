@@ -47,7 +47,7 @@ img {
   font-family: sans-serif;
 }
 
-button {
+.sala_4 {
   position: absolute;
   top: 75%;
   left: 5%;
@@ -61,12 +61,12 @@ button {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-button:hover {
+.sala_4:hover {
   color: #000;
   background-color: #f1f1f1;
 }
 
-button:active {
+.sala_4:active {
   color: #f1f1f1;
   background-color: #000;
 }
