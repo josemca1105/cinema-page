@@ -159,7 +159,7 @@ export class PeliculasPageComponent implements OnInit {
       import('jspdf-autotable').then((x) => {
         const doc = new jsPDF.default('p', 'px', 'a4');
         doc.setFontSize(20);
-        doc.text('Listado de Peliculas', 10, 10);
+        doc.text('Listado de Peliculas', 20, 20);
         (doc as any).autoTable(
           this.exportColumns,
           this.movies
