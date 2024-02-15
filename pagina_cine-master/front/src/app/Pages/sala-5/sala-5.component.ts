@@ -33,7 +33,7 @@ export class Sala5Component {
         {row: 'A', nOfSeats: 8},
         {row: 'B', nOfSeats: 8},
         {row: 'C', nOfSeats: 8},
-        {row: 'D', nOfSeats: 8},
+        {row: 'D', nOfSeats: 8, occupiedSeats: [2, 4, 7]},
       ]
     },
     {
@@ -45,7 +45,7 @@ export class Sala5Component {
         {row: 'A', nOfSeats: 8},
         {row: 'B', nOfSeats: 8},
         {row: 'C', nOfSeats: 8},
-        {row: 'D', nOfSeats: 8},
+        {row: 'D', nOfSeats: 8, occupiedSeats: [2, 4, 7]},
       ]
     },
     {
@@ -57,7 +57,7 @@ export class Sala5Component {
         {row: 'A', nOfSeats: 8},
         {row: 'B', nOfSeats: 8},
         {row: 'C', nOfSeats: 8},
-        {row: 'D', nOfSeats: 8},
+        {row: 'D', nOfSeats: 8, occupiedSeats: [2, 4, 7]},
       ]
     },
     {
@@ -69,7 +69,7 @@ export class Sala5Component {
         {row: 'A', nOfSeats: 8},
         {row: 'B', nOfSeats: 8},
         {row: 'C', nOfSeats: 8},
-        {row: 'D', nOfSeats: 8},
+        {row: 'D', nOfSeats: 8, occupiedSeats: [2, 4, 7]},
       ]
     },
     {
@@ -79,9 +79,9 @@ export class Sala5Component {
       // shows: ['09:00am - 12pm', '02:00pm - 05:00pm'],
       seatRows: [
         {row: 'A', nOfSeats: 8},
-        {row: 'B', nOfSeats: 8},
+        {row: 'B', nOfSeats: 8, occupiedSeats: [1, 2, 3]},
         {row: 'C', nOfSeats: 8},
-        {row: 'D', nOfSeats: 8},
+        {row: 'D', nOfSeats: 8, occupiedSeats: [2, 4, 7]},
       ]
     },
   ];
@@ -97,13 +97,15 @@ export class Sala5Component {
     }
   }
 
-  getSeats(nOfSeats: number) {
-    const seats = [];
+  getSeats(nOfSeats: number, occupiedSeats: number[] | undefined): Seat[] {
+    const seats: Seat[] = [];
     for (let i = 0; i < nOfSeats; i++) {
-      seats.push({selected: false, occupied: false});
+      const isOccupied = occupiedSeats ? occupiedSeats.includes(i + 1) : false;
+      seats.push({ selected: false, occupied: isOccupied });
     }
     return seats;
   }
+
 
   getTotalCost() {
     return this.selectedSeats.length * Number(this.movies[this.selectedMovieIndex].ticketRate);

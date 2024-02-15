@@ -27,11 +27,10 @@
 
     <div *ngFor="let row of movies[selectedMovieIndex].seatRows" class="movie-row">
       <div class="row-info">{{ row.row }}</div>
-      <div *ngFor="let seat of getSeats(row.nOfSeats); let i = index" (click)="selectSeat(seat, row.row)" [ngClass]="{'seat': true, 'selected': seat.selected}">
+      <div *ngFor="let seat of getSeats(row.nOfSeats, row.occupiedSeats); let i = index" (click)="selectSeat(seat, row.row)" [ngClass]="{'seat': true, 'selected': seat.selected, 'occupied': seat.occupied}">
         <span *ngIf="seat.selected"> S </span>
-        <span class="seat-number"> {{ i + 1 }} </span>
-        <!-- <span *ngIf="seat.occupied"> 0 </span> -->
-    </div>
+        <span class="seat-number">{{ i + 1 }}</span>
+      </div>
     </div>
     <!-- <div class="movie-row">
         <div class="seat"></div>
