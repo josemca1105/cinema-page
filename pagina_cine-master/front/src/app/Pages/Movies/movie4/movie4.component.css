@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 94vh;
+  max-width: 100%;
+  background-image: url('../../../../assets/4/the-exorcist-0.jpg');
+  background-size: cover;
+}
+
+.movie-container {
+  width: 80%;
+  height: auto;
+  border: 5px solid rgba(255, 255, 255, 0.4);
+  background: none;
+  backdrop-filter: blur(50px);
+  position: relative;
+  box-shadow: 0 50px 55px -10px #000;
+}
+
+img {
+  float: right;
+}
+
+.title {
+  position: absolute;
+  color: #fff;
+  padding: 50px 70px;
+  font-size: 125px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+}
+
+.description {
+  position: absolute;
+  top: 170px;
+  padding: 80px 80px;
+  color: #f1f1f1;
+  font-size: 20px;
+  font-family: sans-serif;
+}
+
+button {
+  position: absolute;
+  top: 75%;
+  left: 5%;
+  padding: 20px 70px;
+  font-size: 30px;
+  border: 2px solid #fff;
+  background: none;
+  color: #f1f1f1;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+button:hover {
+  color: #000;
+  background-color: #f1f1f1;
+}
+
+button:active {
+  color: #f1f1f1;
+  background-color: #000;
+}
+
+
+a {
+  position: absolute;
+  top: 89%;
+  left: 14%;
+  padding: 10px 40px;
+  font-size: 30px;
+  border: 2px solid #fff;
+  background: none;
+  color: #f1f1f1;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+a:hover {
+  color: #000;
+  background-color: #aaaaaa;
+}
+
+a:active {
+  color: #f1f1f1;
+  background-color: #000;
+}
