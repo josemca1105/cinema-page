@@ -36,11 +36,8 @@
 }
 
 .seat.selected {
-    background-color: #6feaf6;
-}
-
-.seat:active {
-  background-color: #6feaf6;
+  background-color: #6feaf6; /* Color de fondo cuando está seleccionado */
+  color: #fff; /* Color del texto cuando está seleccionado */
 }
 
 .seat.occupied {
