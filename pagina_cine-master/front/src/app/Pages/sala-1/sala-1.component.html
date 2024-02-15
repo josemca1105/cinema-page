@@ -23,9 +23,10 @@
     </div>
 
     <div *ngFor="let row of movies[selectedMovieIndex].seatRows" class="movie-row">
-      <div *ngFor="let seat of getSeats(row.nOfSeats)" (click)="selectSeat(seat, row.row)" [ngClass]="{'seat': true, 'selected': seat.selected}">
+      <div class="row-info">{{ row.row }}</div>
+      <div *ngFor="let seat of getSeats(row.nOfSeats); let i = index" (click)="selectSeat(seat, row.row)" [ngClass]="{'seat': true, 'selected': seat.selected}">
         <span *ngIf="seat.selected"> S </span>
-        <span *ngIf="row.row"> {{ row.row }} </span>
+        <span class="seat-number"> {{ i + 1 }} </span>
         <!-- <span *ngIf="seat.occupied"> 0 </span> -->
     </div>
     </div>
