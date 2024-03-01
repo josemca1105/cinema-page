@@ -3,7 +3,9 @@
 use App\Http\Controllers\PeliculasController;
 use App\Http\Controllers\SalasController;
 use App\Http\Controllers\UsuariosController;
+use App\Mail\FacturaMailable;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,6 +39,12 @@ Route::post('peliculas/create', [PeliculasController::class, 'store']);
 Route::delete('peliculas/delete/{id}', [PeliculasController::class, 'destroy']);
 
 Route::get('imagen/{id}', [PeliculasController::class, 'getImage']);
+
+Route::get('factura/', function() {
+    Mail::to('jose@gmail.com')->send(new FacturaMailable);
+
+    return "Correo enviado";
+});
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
