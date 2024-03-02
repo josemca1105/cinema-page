@@ -32,6 +32,15 @@
         <span class="seat-number">{{ i + 1 }}</span>
       </div>
     </div>
+    <!-- <div class="movie-row" *ngFor="let row of movies[selectedMovieIndex].seatRows">
+        <div class="seat"
+        *ngFor="let seat of getSeats(row.nOfSeats, row.occupiedSeats)"
+        [ngClass]="{ 'occupied': seat.occupied, 'selected-seat': seat.selected }"
+        (click)="selectSeat(seat, row.row)">
+        </div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+    </div> -->
     <!-- <div class="movie-row">
         <div class="seat"></div>
         <div class="seat"></div>
@@ -49,16 +58,6 @@
         <div class="seat"></div>
         <div class="seat"></div>
         <div class="seat"></div>
-        <div class="seat occupied"></div>
-        <div class="seat occupied"></div>
-    </div>
-    <div class="movie-row">
-        <div class="seat"></div>
-        <div class="seat"></div>
-        <div class="seat"></div>
-        <div class="seat"></div>
-        <div class="seat"></div>
-        <div class="seat"></div>
         <div class="seat"></div>
         <div class="seat"></div>
     </div>
@@ -71,10 +70,12 @@
         <div class="seat"></div>
         <div class="seat"></div>
         <div class="seat"></div>
-    </div> -->
-  </div>
+    </div>
+  </div> -->
 
   <p class="text">
     Has seleccionado <span id="count">{{ selectedSeats.length }}</span> asientos por un precio de $<span id="total">{{ getTotalCost() }}</span>
   </p>
+
+  <button class="bg-blue-800 hover:bg-blue-950 focus:outline-none focus:border-blue-700 transition duration-150 ease-in-out" (click)="confirmarCompra()">Confirmar compra</button>
 </div>

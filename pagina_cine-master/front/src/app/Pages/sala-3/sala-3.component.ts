@@ -1,5 +1,6 @@
 import { NgClass, NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 interface Seat {
   selected: boolean;
@@ -86,6 +87,8 @@ export class Sala3Component {
     },
   ];
 
+  constructor(private http: HttpClient) {}
+
   selectSeat(seat: any, row: string) {
     if (!seat.occupied) {
       if (seat.selected) {
@@ -108,5 +111,11 @@ export class Sala3Component {
 
   getTotalCost() {
     return this.selectedSeats.length * Number(this.movies[this.selectedMovieIndex].ticketRate);
+  }
+
+  confirmarCompra() {
+    this.http.get('http://127.0.0.1:8000/api/factura').subscribe((res: any) => {
+      alert('Compra realizada con éxito. Revise su correo electronico para ver su factura.');
+    });
   }
 }
