@@ -44,6 +44,11 @@
   color: #fff; /* Color del texto cuando está seleccionado */
 }
 
+.movie-row .seat.selected-seat {
+  background-color: #00ff00; /* Cambia el color de fondo a tu preferencia */
+  color: #fff; /* Color del texto cuando está seleccionado */
+}
+
 .seat.occupied {
     background-color: #fff;
 }
@@ -107,10 +112,11 @@
 }
 
 p.text {
-    margin: 5px 0;
-    font-size: 25px;
+  margin: 5px 0;
+  font-size: 25px;
+  text-align: center; /* Alineación centrada */
 }
 
 p.text span {
-    color: #6feaf6;
+  color: #6feaf6;
 }
