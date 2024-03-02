@@ -46,6 +46,10 @@ Route::get('factura/', function() {
     return "Correo enviado";
 });
 
+Route::get('facturas/', function() {
+    return view('emails.facturas');
+});
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });

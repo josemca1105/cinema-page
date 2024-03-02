@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1>Factura de Pago</h1>
-    <p>Su correo con el recibo de pago</p>
+    <p>Su correo con los datos de la funcion</p>
+    <p> {{ QrCode::size(150)->generate('Asientos: A5 A6 A7') }} </p>
 </body>
 </html>
