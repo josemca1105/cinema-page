@@ -42,8 +42,6 @@ Route::get('imagen/{id}', [PeliculasController::class, 'getImage']);
 
 Route::get('factura/', function() {
     Mail::to('jose@gmail.com')->send(new FacturaMailable);
-
-    return "Correo enviado";
 });
 
 Route::get('facturas/', function() {

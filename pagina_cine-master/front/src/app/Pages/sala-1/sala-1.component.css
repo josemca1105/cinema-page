@@ -120,3 +120,16 @@ p.text {
 p.text span {
   color: #6feaf6;
 }
+
+button {
+  border: none;
+  border-radius: 15px;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s;
+  display: block;
+  margin: 0 auto; /* Esto centrará horizontalmente el botón */
+}
+
