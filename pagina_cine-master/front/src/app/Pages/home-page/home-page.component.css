@@ -70,3 +70,32 @@ img:hover {
 .slider-nav a:hover {
   opacity: 1;
 }
+
+.post {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.post iframe {
+  /* width: 70%; */
+  /* height: 90%; */
+  border-radius: 35px;
+  padding: 10px;
+}
+
+.map {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 60vh;
+  width: 100%;
+}
+
+.map iframe {
+  width: 70%;
+  height: 90%;
+  border-radius: 35px;
+}
