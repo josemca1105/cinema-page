@@ -37,16 +37,8 @@ export class PeliculasCreateComponent {
   }
 
   register() {
-    // let bodyData = {
-    //   'nombre': this.nombre,
-    //   'descripcion': this.descripcion,
-    //   'duracion': this.duracion,
-    //   'genero': this.genero,
-    //   'estreno': this.estreno
-    // };
-
     var formData = new FormData();
-    formData.append('file', this.imagen, this.imagen.name);
+    formData.append('imagen', this.imagen, this.imagen.name);
     formData.append('nombre', this.nombre);
     formData.append('descripcion', this.descripcion);
     formData.append('duracion', this.duracion);
@@ -73,9 +65,16 @@ export class PeliculasCreateComponent {
   }
 
   savePelicula() {
-    if (this.currentPeliculaID == '') {
-      this.register();
+    if (this.imagen && this.currentPeliculaID == '') {
+      const fileExtension = this.imagen.name.split('.').pop().toLowerCase();
+      const validExtensions = ['jpg', 'jpeg', 'png'];
+      if (validExtensions.includes(fileExtension)) {
+        this.register();
+      } else {
+        alert('Por favor seleccione una imagen valida. Las extensiones validas son .jpg, .jpeg, .png');
+      }
+    } else {
+      alert('Por favor agregue todos los datos.');
     }
   }
-
 }

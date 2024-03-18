@@ -2,8 +2,7 @@ import { NgFor, CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgxPaginationModule } from 'ngx-pagination';
-import jsPDF from 'jspdf';
-import autoTable from 'jspdf-autotable';
+import { FormsModule, NgModel } from '@angular/forms';
 
 interface Movie {
   id: string;
@@ -28,9 +27,9 @@ interface ExportColumn {
 @Component({
   selector: 'app-peliculas-page',
   standalone: true,
-  imports: [NgFor, NgxPaginationModule, CommonModule],
+  imports: [NgFor, NgxPaginationModule, CommonModule, FormsModule],
   templateUrl: './peliculas-page.component.html',
-  styleUrl: './peliculas-page.component.css'
+  styleUrl: './peliculas-page.component.css',
 })
 export class PeliculasPageComponent implements OnInit {
   p: number = 1;
@@ -48,6 +47,8 @@ export class PeliculasPageComponent implements OnInit {
   movies: Movie[] = [];
   cols!: Column[];
   exportColumns!: ExportColumn[];
+
+  filtroGenero: string = '';
 
   constructor(private http: HttpClient) {
     this.getAllPelicula();
@@ -86,74 +87,6 @@ export class PeliculasPageComponent implements OnInit {
     });
   }
 
-  // generatePDF() {
-  //   const margins = {
-  //     top: 30,
-  //     bottom: 30,
-  //     left: 10,
-  //     right: 10
-  //   };
-
-  //   const doc = new jsPDF();
-  //   doc.setFont('Times');
-  //   doc.setFontSize(18);
-  //   doc.text('Pruebaaaa', margins.left, margins.top);
-
-  //   doc.setFontSize(12);
-  //   doc.text('texto de pruebaaaa', margins.left, 50);
-
-  //   doc.addImage(
-  //     '../../../assets/1/john01.jpg',
-  //     margins.left,
-  //     70,
-  //     20,
-  //     30
-  //   );
-
-  //   doc.save('peliculas.pdf'); // Guardar PDF
-  // }
-  // generatePDF() {
-  //   const margins = {
-  //     top: 15,
-  //     bottom: 15,
-  //     left: 10,
-  //     right: 10
-  //   };
-
-  //   const doc = new jsPDF();
-  //   doc.setFont('Times');
-  //   doc.setFontSize(18);
-  //   doc.text('Listado de Peliculas', margins.left, margins.top);
-
-  //   // Get all movie data, not just the current page
-  //   const allPeliculaData = this.peliculaArray;
-
-  //   // Create the table header
-  //   const tableHeaders = ['Imagen', 'Nombre', 'Descripcion', 'Duracion', 'Genero', 'Estreno'];
-
-  //   // Create the table data
-  //   const tableData = allPeliculaData.map(pelicula => [
-  //     this.getImageUrl(pelicula.id),
-  //     pelicula.nombre,
-  //     pelicula.descripcion,
-  //     pelicula.duracion,
-  //     pelicula.genero,
-  //     pelicula.estreno
-  //   ]);
-
-  //   // Generate the PDF table
-  //   autoTable(doc, {
-  //     startY: 50,
-  //     // head: tableHeaders,
-  //     body: tableData,
-  //     styles: {
-  //       halign: 'left',
-  //       cellPadding: 5
-  //     }
-  //   });
-
-  //   doc.save('peliculas.pdf');
-  // }
   generatePDF() {
     import('jspdf').then((jsPDF) => {
       import('jspdf-autotable').then((x) => {
