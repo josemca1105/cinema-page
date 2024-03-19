@@ -111,116 +111,6 @@ input#img-5:checked ~ .nav-dots label#img-dot-5 {
 	background: rgb(255, 255, 255);
 }
 
-/* .slides {
-  padding: 0;
-  width: 530px;
-  height: 335px;
-  display: block;
-  margin:80px auto 80px;
-  position: relative;
-}
-
-.slides * {
-    user-select: none;
-    -ms-user-select: none;
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    -webkit-touch-callout: none;
-}
-
-.slides input { display: none; }
-
-.slide-container { display: block; }
-
-.slide {
-    top: 0;
-    opacity: 0;
-    width: 530px;
-    height: 335px;
-    display: block;
-    position: absolute;
-
-    transform: scale(0);
-
-    transition: all .7s ease-in-out;
-}
-
-.slide iframe {
-  width: 100%;
-  height: 100%;
-}
-
-.nav label {
-    width: 200px;
-    height: 100%;
-    display: none;
-    position: absolute;
-
-	  opacity: 0;
-    z-index: 9;
-    cursor: pointer;
-
-    transition: opacity .2s;
-
-    color: #FFF;
-    font-size: 156pt;
-    text-align: center;
-    line-height: 380px;
-    font-family: "Varela Round", sans-serif;
-    background-color: rgba(255, 255, 255, .3);
-    text-shadow: 0px 0px 15px rgb(119, 119, 119);
-}
-
-.slide:hover + .nav label { opacity: 0.5; }
-
-.nav label:hover { opacity: 1; }
-
-.nav .next { right: 0; }
-
-input:checked + .slide-container-2  .slide {
-    opacity: 1;
-
-    transform: scale(1);
-
-    transition: opacity 1s ease-in-out;
-}
-
-input:checked + .slide-container-2 .nav-2 label { display: block; }
-
-.nav-dots {
-	width: 100%;
-	bottom: 9px;
-	height: 11px;
-	display: block;
-	position: absolute;
-	text-align: center;
-}
-
-.nav-dots .nav-dot {
-	top: -5px;
-	width: 11px;
-	height: 11px;
-	margin: 0 4px;
-	position: relative;
-	border-radius: 100%;
-	display: inline-block;
-	background-color: rgba(0255, 255, 255, 0.6);
-}
-
-.nav-dots .nav-dot:hover {
-	cursor: pointer;
-  background-color: rgba(0255, 255, 255, 0.6);
-}
-
-input#vid-1:checked ~ .nav-dots label#vid-dot-1,
-input#vid-2:checked ~ .nav-dots label#vid-dot-2,
-input#vid-3:checked ~ .nav-dots label#vid-dot-3,
-input#vid-4:checked ~ .nav-dots label#vid-dot-4,
-input#vid-5:checked ~ .nav-dots label#vid-dot-5 {
-	background: rgba(255, 255, 255, 0.8);
-} */
-
 .container {
   /* padding: 2rem; */
   width: 100%;
@@ -309,16 +199,27 @@ img:hover {
   padding: 10px;
 }
 
-.map {
+.footer {
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   display: flex;
   height: 60vh;
   width: 100%;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(9,9,121,1) 35%, rgba(2,0,36,1) 100%);
 }
 
-.map iframe {
+.footer h1 {
+  font-size: 70px;
+}
+
+.footer p {
+  font-size: 20px;
+}
+
+.footer iframe {
   width: 70%;
-  height: 90%;
+  height: 70%;
   border-radius: 35px;
 }

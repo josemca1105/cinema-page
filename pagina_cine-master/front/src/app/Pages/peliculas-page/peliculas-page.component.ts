@@ -3,7 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule, NgModel } from '@angular/forms';
-
+import { Pipe, PipeTransform } from '@angular/core';
+import { SearchPipe } from '../../search.pipe';
 interface Movie {
   id: string;
   imagen: string;
@@ -27,7 +28,7 @@ interface ExportColumn {
 @Component({
   selector: 'app-peliculas-page',
   standalone: true,
-  imports: [NgFor, NgxPaginationModule, CommonModule, FormsModule],
+  imports: [NgFor, NgxPaginationModule, CommonModule, FormsModule, SearchPipe],
   templateUrl: './peliculas-page.component.html',
   styleUrl: './peliculas-page.component.css',
 })
@@ -48,7 +49,7 @@ export class PeliculasPageComponent implements OnInit {
   cols!: Column[];
   exportColumns!: ExportColumn[];
 
-  filtroGenero: string = '';
+  searchText = '';
 
   constructor(private http: HttpClient) {
     this.getAllPelicula();
