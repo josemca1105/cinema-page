@@ -106,3 +106,42 @@ a:active {
   color: #f1f1f1;
   background-color: #000;
 }
+
+.details {
+  margin-top: -10px;
+}
+
+.colors-container {
+  margin-top: -22px;
+  display: flex;
+  align-items: center; /* align vertically */
+  justify-content: start; /* align horizontally */
+}
+
+.color1, .color2, .color3, .color4, .color5 {
+  width: 50px; /* adjust as needed */
+  height: 50px; /* adjust as needed */
+  margin: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.color1 {
+  background-color: #4C2C3B;
+}
+
+.color2 {
+  background-color: #AD5D44;
+}
+
+.color3 {
+  background-color: #904B4C;
+}
+
+.color4 {
+  background-color: #511227;
+}
+
+.color5 {
+  background-color: #0B0C10;
+}

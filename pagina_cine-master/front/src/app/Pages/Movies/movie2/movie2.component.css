@@ -95,3 +95,38 @@ a:active {
   color: #f1f1f1;
   background-color: #000;
 }
+
+.colors-container {
+  margin-top: -22px;
+  display: flex;
+  align-items: center; /* align vertically */
+  justify-content: start; /* align horizontally */
+}
+
+.color1, .color2, .color3, .color4, .color5 {
+  width: 50px; /* adjust as needed */
+  height: 50px; /* adjust as needed */
+  margin: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.color1 {
+  background-color: #090A0F;
+}
+
+.color2 {
+  background-color: #386373;
+}
+
+.color3 {
+  background-color: #E8F2F2;
+}
+
+.color4 {
+  background-color: #93ACB1;
+}
+
+.color5 {
+  background-color: #0D1E25;
+}
