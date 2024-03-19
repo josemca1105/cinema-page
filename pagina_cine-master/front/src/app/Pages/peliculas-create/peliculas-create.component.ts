@@ -26,6 +26,8 @@ export class PeliculasCreateComponent {
 
   uploadedFileName: string [] = [];
 
+  today = new Date().toISOString().split('T')[0];
+
   constructor(private http: HttpClient, private router: Router) {
     this.getAllPelicula();
   }
@@ -59,6 +61,7 @@ export class PeliculasCreateComponent {
   }
 
   uploadImage(event: any) {
+    // console.log(event);
     this.imagen = event.target.files[0];
     console.log(this.imagen);
   }
@@ -72,10 +75,8 @@ export class PeliculasCreateComponent {
       } else {
         alert('Por favor seleccione una imagen valida. Las extensiones validas son .jpg, .jpeg, .png');
       }
-    } if (this.nombre == '') {
-      alert('Por favor agregue el nombre de la pelicula');
-    } if (this.descripcion == '') {
-      alert('Por favor agregue la descripcion de la pelicula');
+    } if (this.nombre == '' || this.descripcion == '' || this.duracion == '' || this.genero == '' || this.estreno == '') {
+      alert('Por favor complete todos los campos');
     }
   }
 }

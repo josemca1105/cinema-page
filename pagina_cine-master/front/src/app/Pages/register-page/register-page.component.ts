@@ -53,6 +53,8 @@ export class RegisterPageComponent implements OnInit {
   saveUser() {
     if (this.currentUsuarioID == '') {
       this.register();
+    } if (this.nombre == '' && this.email == '' && this.password == '') {
+      alert('Por favor llene todos los campos');
     }
   }
 }

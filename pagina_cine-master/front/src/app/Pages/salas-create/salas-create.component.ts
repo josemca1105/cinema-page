@@ -59,6 +59,8 @@ export class SalasCreateComponent implements OnInit {
   saveSala() {
     if (this.currentSalaID == '') {
       this.register();
+    } if (this.nombre == '' || this.asientos == '' || this.desde == '' || this.hasta == '' || this.tipo == '') {
+      alert('Por favor llenar todos los campos');
     }
   }
 }
